@@ -1,0 +1,95 @@
+/*
+* @Author: Administrator
+* @Date:   2017-06-05 12:16:59
+* @Last Modified by:   Administrator
+* @Last Modified time: 2017-06-06 11:19:18
+*/
+
+#lightBox-mask {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #000;
+    opacity: .5;
+    z-index: 100;
+    display: none;
+}
+
+#lightBox-popup {
+    position: fixed;
+    //left: 50%;
+    top: 0;
+    margin-left: -150px;
+    background-color: #fff;
+    z-index: 101;
+    display: none;
+}
+
+#lightBox-popup .lightBox-pic-view {
+    position: relative;
+    height: 100%;
+    border: 5px solid #fff;
+    border-radius: 3px;
+    overflow: hidden;
+    background: url(../img/loading2.gif) no-repeat center center;
+}
+
+#lightBox-popup .lightBox-pic-view .lightBox-btn {
+    position: absolute;
+    top: 0;
+    width: 40%;
+    height: 100%;
+    color: #fff;
+    font-size: 25px;
+    cursor: pointer;
+    opacity: 0;
+}
+
+#lightBox-popup .lightBox-pic-view .disabled {
+    display: none;
+    opacity: 0;
+}
+
+#lightBox-popup .lightBox-pic-view .lightBox-prev-btn {
+    left: 0;
+}
+
+#lightBox-popup .lightBox-pic-view .lightBox-prev-btn .glyphicon-menu-left {
+    position: absolute;
+    top: 43%;
+    left: 10%;
+}
+
+#lightBox-popup .lightBox-pic-view .lightBox-next-btn {
+    right: 0;
+}
+
+#lightBox-popup .lightBox-pic-view .lightBox-next-btn .glyphicon-menu-right {
+    position: absolute;
+    top: 43%;
+    right: 10%;
+}
+
+#lightBox-popup .lightBox-pic-caption {
+    position: relative;
+    margin: 0 5px;
+    padding: 10px 5px;
+    margin-top: -50px;
+    background-color: rgba(0, 0, 0, .5);
+    color: #fff;
+    font-size: 18px;
+}
+
+#lightBox-popup .lightBox-pic-caption .lightBox-index {
+    margin-left: 20px;
+    font-size: 12px;
+}
+
+#lightBox-popup .lightBox-pic-caption .lightBox-close-btn {
+    position: absolute;
+    right: 10px;
+    top: 13px;
+    cursor: pointer;
+}
