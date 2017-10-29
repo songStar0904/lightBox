@@ -9,11 +9,13 @@
 	data-caption="图片1" 图片描述
   
 # 用法
+```javascript
 	var lightbox = new lightBox({
 	    speed:300, // 运动速度
 	    maxWidth:900, //显示最大宽度
 	    maxHeight:600, //显示最大高度
 	    maskOpacity:.6 //遮罩层透明度
 	});
+```
 # 线上地址
 [线上地址](https://songstarr.github.io/lightBox)
