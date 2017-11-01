@@ -121,8 +121,8 @@
         });
     };
     lightBox.prototype = {
-
-    	renderDom:function(){
+        // render 弹出层
+    	renderDom: function(){
     		var popupHtml = `<div class="lightBox-pic-view">
                     	    <span class="lightBox-btn lightBox-prev-btn disabled">
                             <span class="glyphicon glyphicon-menu-left"></span>
@@ -140,11 +140,10 @@
         	//将popuphtml放入popupBox里
         	this.popupBox.html(popupHtml);
         	//将遮罩和弹出层插入值body
-        	this.bodyNode.append(this.popupMask,this.popupBox);
+        	this.bodyNode.append(this.popupMask, this.popupBox);
     	},
+        // 关闭弹出层
         close: function(){
-            this.prevBtn.addClass('disabled');
-            this.nextBtn.addClass('disabled');
             this.popupMask.fadeOut();
             this.popupBox.fadeOut();
             this.clear = false;
@@ -154,7 +153,7 @@
             return !el.hasClass('disabled') && this.groupData.length > 1
         },
         // 获得同组元素的属性
-    	getgroup:function(){
+    	getgroup: function(){
     		var _this = this;
     		//清空之前数据
     		_this.groupData.length = 0;
@@ -170,19 +169,19 @@
     		//console.log(_this);
     	},
         // 初始化弹出层
-    	initPopup:function(currentData){
+    	initPopup: function(currentData){
     		var currentSrc = currentData.attr('data-source'),
     		    currentId = currentData.attr('data-id');
     		this.showPopup(currentSrc, currentId);
     	},
         // 显示图片弹出层
-    	showPopup:function(src, id){
+    	showPopup: function(src, id){
     		var _this=this;
     		//console.log(src);
     		this.popupPic.hide();
     		this.picCation.hide();
-
-    		this.popupMask.css('opacity', this.config.maskOpacity).fadeIn();//配置遮罩透明度及显示
+            // 配置遮罩透明度及显示
+    		this.popupMask.css('opacity', this.config.maskOpacity).fadeIn();
 
     		var winWidth = $(window).width(),
     		    winHeight = $(window).height();
@@ -302,32 +301,30 @@
     		this.picTitle.text(this.groupData[this.index].caption);
     		this.currentIndex.text(`当前索引:${this.index+1} / ${this.groupData.length}`);
     	},
-    	goto:function(type){
-    		var _this=this;
-    		if(type==='next'){
+    	goto: function(type){
+    		var _this = this;
+    		if(type === 'next'){
     			_this.index++;
-    			if(this.index>=this.groupData.length-1){
+    			if(this.index >= this.groupData.length-1){
     				this.nextBtn.addClass('disabled');
     			}
-    			if(this.index!=0){
+    			if(this.index != 0){
     				this.prevBtn.removeClass('disabled').css('opacity','0');
     			}
-    			var src=this.groupData[this.index].src;
+    			var src = this.groupData[this.index].src;
     			this.loadPic(src);
-    		}else if(type==='prev'){
+    		}else if(type === 'prev'){
     			_this.index--;
-    			if(this.index===0){
+    			if(this.index === 0){
     				this.prevBtn.addClass('disabled');
     			}
-    			if(this.index<this.groupData.length-1){
+    			if(this.index < this.groupData.length - 1){
     				this.nextBtn.removeClass('disabled').css('opacity','0');
     			}
-    			var src=this.groupData[this.index].src;
+    			var src = this.groupData[this.index].src;
     			this.loadPic(src);
     		}
     	}
-
-
     };
     window.lightBox = lightBox;
 })();
