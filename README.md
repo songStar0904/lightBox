@@ -1,7 +1,7 @@
 # lightBox
 基于jQuery的图片lightBox插件
 
-# 注释
+## 注释
 ```html
 <img src="img/1.png" alt="" 
 	data-role="lightbox" 
@@ -17,7 +17,7 @@
 	data-id="1" 图片唯一标识
 	data-caption="图片1" 图片描述
   
-# 用法
+## 用法
 ```javascript
 	var lightbox = new lightBox({
 	    speed:300, // 运动速度
@@ -26,5 +26,7 @@
 	    maskOpacity:.6 //遮罩层透明度
 	});
 ```
-# 线上地址
+## 线上地址
 [线上地址](https://songstarr.github.io/lightBox)
+
+ps: 由于图片较大，github在国外，加载大图片可能会有点慢~
